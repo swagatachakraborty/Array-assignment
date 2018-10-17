@@ -12,3 +12,13 @@ const add = function(array) {
 }
 exports.add = add;
 
+const createOddList  = function(array) {
+  let oddList = []; 
+  for(element of array) {
+    if(!isEven(element)) {
+      oddList.push(element);
+    }
+  }
+  return oddList;
+}
+exports.createOddList = createOddList;
