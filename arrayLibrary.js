@@ -12,13 +12,18 @@ const add = function(array) {
 }
 exports.add = add;
 
-const createOddList  = function(array) {
+const splitEvenOddList  = function(array) {
   let oddList = []; 
+  let evenList = [];
+  let evenOddList = {even :[], odd:[]};
   for(element of array) {
     if(!isEven(element)) {
       oddList.push(element);
     }
+    if(isEven(element)) {
+      evenList.push(element);
+    }
   }
-  return oddList;
+  return { odd : oddList, even : evenList};
 }
-exports.createOddList = createOddList;
+exports.splitEvenOddList = splitEvenOddList;

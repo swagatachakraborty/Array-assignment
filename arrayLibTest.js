@@ -21,13 +21,13 @@ checkAssert(lib.add([10,20,30]),60,"Error in add()");
 checkAssert(lib.add([1.34,6.8]),8.14,"Error in add()");
 console.log("add works fine");
 
-//________________________testing createOddList()____________________________
-checkAssert(lib.createOddList([]),[],"Error in createOddList()");
-checkAssert(lib.createOddList([2,3,4]),[3],"Error in createOddList()");
-checkAssert(lib.createOddList([0,1,0]),[1],"Error in createOddList()");
-checkAssert(lib.createOddList([9,1,3]),[9,1,3],"Error in createOddList()");
-checkAssert(lib.createOddList([12,13,21]),[13,21],"Error in createOddList()");
-checkAssert(lib.createOddList([10,20,30]),[],"Error in createOddList()");
-checkAssert(lib.createOddList([1.34,6.8]),[1.34,6.8],"Error in createOddList()");
-console.log("createOddList works fine");
+//________________________testing splitEvenOddList()____________________________
+let error = "Error in splitEvenOddList()";
+checkAssert(lib.splitEvenOddList([]),{odd : [],even : []},error);
+checkAssert(lib.splitEvenOddList([2,3,4]),{odd:[3], even:[2,4]},error);
+checkAssert(lib.splitEvenOddList([0,1,0]),{odd : [1],even : [0,0]},error);
+checkAssert(lib.splitEvenOddList([9,1,3]),{odd : [9,1,3],even : []},error);
+checkAssert(lib.splitEvenOddList([12,13,21]),{odd : [13,21],even : [12]},error);
+checkAssert(lib.splitEvenOddList([10,20,30]),{odd : [],even : [10,20,30]},error);
+console.log("splitEvenOddList works fine");
 
