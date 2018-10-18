@@ -27,3 +27,9 @@ const splitEvenOddList  = function(array) {
   return { odd : oddList, even : evenList};
 }
 exports.splitEvenOddList = splitEvenOddList;
+
+const splitList = function(list,requireListType) {
+  let splitList = splitEvenOddList(list);
+  return splitList[requireListType];
+}
+exports.splitList = splitList;

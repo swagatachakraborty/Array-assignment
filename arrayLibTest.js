@@ -31,3 +31,18 @@ checkAssert(lib.splitEvenOddList([12,13,21]),{odd : [13,21],even : [12]},error);
 checkAssert(lib.splitEvenOddList([10,20,30]),{odd : [],even : [10,20,30]},error);
 console.log("splitEvenOddList works fine");
 
+//________________________testing splitList()____________________________
+checkAssert(lib.splitList([],"odd"),[],"Error in splitList()");
+checkAssert(lib.splitList([2,3,4],"odd"),[3],"Error in splitList()");
+checkAssert(lib.splitList([0,1,0],"odd"),[1],"Error in splitList()");
+checkAssert(lib.splitList([9,1,3],"odd"),[9,1,3],"Error in splitList()");
+checkAssert(lib.splitList([12,13,21],"odd"),[13,21],"Error in splitList()");
+checkAssert(lib.splitList([10,20,30],"odd"),[],"Error in splitList()");
+
+checkAssert(lib.splitList([],"even"),[],"Error in splitList()");
+checkAssert(lib.splitList([2,3,4],"even"),[2,4],"Error in splitList()");
+checkAssert(lib.splitList([0,1,0],"even"),[0,0],"Error in splitList()");
+checkAssert(lib.splitList([9,1,3],"even"),[],"Error in splitList()");
+checkAssert(lib.splitList([12,13,21],"even"),[12],"Error in splitList()");
+checkAssert(lib.splitList([10,20,30],"even"),[10,20,30],"Error in splitList()");
+console.log("splitList works fine");
