@@ -172,6 +172,14 @@ checkAssert(lib.union.name,[[0,1,0],[4,8,34,10]],lib.union([0,1,0],[4,8,34,10]),
 checkAssert(lib.union.name,[[10,20,30],[22,14,6]],lib.union([10,20,30],[22,14,6]),[10,20,30,22,14,6],"Error in union()");
 console.log("union works fine\n");
 
+//________________________testing operationOnLists()____________________________
+checkAssert(lib.operationOnLists.name,[[],[]],lib.operationOnLists([],[]),{intersection : [],difference : []},"Error in operationOnLists()");
+checkAssert(lib.operationOnLists.name,[[12,6],[]],lib.operationOnLists([12,6],[]),{intersection : [],difference : [12,6]},"Error in operationOnLists()");
+checkAssert(lib.operationOnLists.name,[[2,2,3,4,4],[1,2,8]],lib.operationOnLists([2,2,3,4,4],[1,2,8]),{intersection : [2],difference : [3,4]},"Error in operationOnLists()");
+checkAssert(lib.operationOnLists.name,[[0,1,0],[4,8,34,10]],lib.operationOnLists([0,1,0],[4,8,34,10]),{intersection : [],difference : [0,1]},"Error in operationOnLists()");
+checkAssert(lib.operationOnLists.name,[[10,20,30],[20,20,30,12]],lib.operationOnLists([10,20,30],[20,20,30,12]),{intersection : [20,30],difference : [10]},"Error in operationOnLists()");
+console.log("operationOnLists works fine\n");
+
 //________________________testing intersection()____________________________
 checkAssert(lib.intersection.name,[[],[]],lib.intersection([],[]),[],"Error in intersection()");
 checkAssert(lib.intersection.name,[[12,6],[]],lib.intersection([12,6],[]),[],"Error in intersection()");
