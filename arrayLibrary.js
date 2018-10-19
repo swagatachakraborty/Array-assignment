@@ -246,3 +246,14 @@ const difference = function(list1,list2) {
   return operationOnLists(list1,list2)["difference"];
 }
 exports.difference = difference;
+
+const isSubset = function(list1,list2) {
+  for(element of list2) { 
+    if(findIndex(list1,element) == -1) {
+      return false;
+    }
+  }
+  return true;
+}
+exports.isSubset = isSubset;
+

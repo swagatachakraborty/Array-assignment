@@ -195,3 +195,11 @@ checkAssert(lib.difference.name,[[2,2,3,4,4],[1,2,8]],lib.difference([2,2,3,4,4]
 checkAssert(lib.difference.name,[[0,1,0],[4,8,34,10]],lib.difference([0,1,0],[4,8,34,10]),[0,1],"Error in difference()");
 checkAssert(lib.difference.name,[[10,20,30],[20,20,30,12]],lib.difference([10,20,30],[20,20,30,12]),[10],"Error in difference()");
 console.log("difference works fine\n");
+
+//________________________testing isSubset()____________________________
+checkAssert(lib.isSubset.name,[[],[]],lib.isSubset([],[]),true,"Error in isSubset()");
+checkAssert(lib.isSubset.name,[[1,2,3],[2,3,5]],lib.isSubset([1,2,3],[2,3,5]),false,"Error in isSubset()");
+checkAssert(lib.isSubset.name,[[2,7,3],[2,3,7,1]],lib.isSubset([2,7,3],[2,3,7,1]),false,"Error in isSubset()");
+checkAssert(lib.isSubset.name,[[1,29,6],[29,1]],lib.isSubset([1,29,6],[29,1]),true,"Error in isSubset()");
+checkAssert(lib.isSubset.name,[[1,5,6],[]],lib.isSubset([1,5,6],[]),true,"Error in isSubset()");
+console.log("isSubset works fine\n");
