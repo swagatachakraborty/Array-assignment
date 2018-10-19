@@ -98,13 +98,13 @@ checkAssert(lib.extractDigits.name,[0],lib.extractDigits(0),[],"Error in extract
 checkAssert(lib.extractDigits.name,[09872],lib.extractDigits(09872),[9,8,7,2],"Error in extractDigits()");
 console.log("extractDigits works fine\n");
 
-//________________________testing countAboveAndBelowThreshold()____________________________
-checkAssert(lib.countAboveAndBelowThreshold.name,[[],2],lib.countAboveAndBelowThreshold([],2),{above : 0, below : 0},"Error in countAboveAndBelowThreshold");
-checkAssert(lib.countAboveAndBelowThreshold.name,[[2,3,4],3],lib.countAboveAndBelowThreshold([2,3,4],3),{above : 1, below : 1},"Error in countAboveAndBelowThreshold");
-checkAssert(lib.countAboveAndBelowThreshold.name,[[0,1,0],1],lib.countAboveAndBelowThreshold([0,1,0],1),{above : 0, below : 2},"Error in countAboveAndBelowThreshold");
-checkAssert(lib.countAboveAndBelowThreshold.name,[[9,1,3],9],lib.countAboveAndBelowThreshold([9,1,3],9),{above : 0,below : 2},"Error in countAboveAndBelowThreshold");
-checkAssert(lib.countAboveAndBelowThreshold.name,[[12,13,21],4],lib.countAboveAndBelowThreshold([12,13,21],4),{above : 3,below : 0},"Error in countAboveAndBelowThreshold");
-console.log("countAboveAndBelowThreshold works fine\n");
+//________________________testing filterByThreshold()____________________________
+checkAssert(lib.filterByThreshold.name,[[],2],lib.filterByThreshold([],2),{above : {list:[],count:0}, below :{list:[],count:0}},"Error in filterByThreshold");
+checkAssert(lib.filterByThreshold.name,[[2,3,4],3],lib.filterByThreshold([2,3,4],3),{above : {list:[4],count:1}, below :{list:[2,3],count:2}},"Error in filterByThreshold");
+checkAssert(lib.filterByThreshold.name,[[0,1,0],1],lib.filterByThreshold([0,1,0],1),{above : {list:[],count:0}, below :{list:[0,1,0],count:3}},"Error in filterByThreshold");
+checkAssert(lib.filterByThreshold.name,[[9,1,3],9],lib.filterByThreshold([9,1,3],9),{above : {list:[],count:0}, below :{list:[9,1,3],count:3}},"Error in filterByThreshold");
+checkAssert(lib.filterByThreshold.name,[[12,13,21],4],lib.filterByThreshold([12,13,21],4),{above : {list:[12,13,21],count:3}, below :{list:[],count:0}},"Error in filterByThreshold");
+console.log("filterByThreshold works fine\n");
 
 //________________________testing countAboveThreshold()____________________________
 checkAssert(lib.countAboveThreshold.name,[[ ],0],lib.countAboveThreshold([ ],0),0,"Error in countAboveThreshold()");
@@ -115,8 +115,8 @@ console.log("countAboveThreshold works fine\n");
 
 //________________________testing countBelowThreshold()____________________________
 checkAssert(lib.countBelowThreshold.name,[[ ],0],lib.countBelowThreshold([ ],0),0,"Error in countBelowThreshold()");
-checkAssert(lib.countBelowThreshold.name,[[2,3,4],3],lib.countBelowThreshold([2,3,4],3),1,"Error in countBelowThreshold()");
-checkAssert(lib.countBelowThreshold.name,[[0,1,0],1],lib.countBelowThreshold([0,1,0],1),2,"Error in countBelowThreshold()");
+checkAssert(lib.countBelowThreshold.name,[[2,3,4],3],lib.countBelowThreshold([2,3,4],3),2,"Error in countBelowThreshold()");
+checkAssert(lib.countBelowThreshold.name,[[0,1,0],1],lib.countBelowThreshold([0,1,0],1),3,"Error in countBelowThreshold()");
 checkAssert(lib.countBelowThreshold.name,[[10,20,30],12],lib.countBelowThreshold([12,21,13],4),0,"Error in countBelowThreshold()");
 console.log("countBelowThreshold works fine\n");
 

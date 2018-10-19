@@ -131,29 +131,31 @@ const extractDigits = function(number) {
 }
 exports.extractDigits = extractDigits;
 
-const countAboveAndBelowThreshold = function(list, threshold) {
-  let above = 0;
-  let below = 0;
-  for(element of list) {
+const filterByThreshold = function(inputList, threshold) {
+  let above = {list : [],count : 0};
+  let below = {list : [],count : 0};
+  for(element of inputList) {
     if(element > threshold) {
-      above++;
+      above.list.push(element);
+      above.count++;
     }
 
-    if(element < threshold) {
-    below++;
+    if(element <= threshold) {
+      below.list.push(element);
+      below.count++;
     }
   }
   return { above : above, below : below };
 }
-exports.countAboveAndBelowThreshold = countAboveAndBelowThreshold;
+exports.filterByThreshold = filterByThreshold;
 
 const countAboveThreshold = function(list, threshold) {
-  return countAboveAndBelowThreshold(list, threshold).above ;
+  return filterByThreshold(list, threshold).above.count ;
 }
 exports.countAboveThreshold = countAboveThreshold;
 
 const countBelowThreshold = function(list, threshold){
-  return countAboveAndBelowThreshold(list, threshold).below ;
+  return filterByThreshold(list, threshold).below.count ;
 }
 exports.countBelowThreshold = countBelowThreshold;
 
@@ -175,3 +177,10 @@ const mapLengths = function(list) {
 }
 exports.mapLengths = mapLengths;
 
+const partition = function(list,threshold) {
+  let partitionList = [];
+  partitionList.push(filterByThreshold(list,threshold).above.list);
+  partitionList.push(filterByThreshold(list,threshold).below.list);
+  return partitionList;
+}
+exports.partition = partition;
