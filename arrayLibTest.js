@@ -64,3 +64,10 @@ checkAssert(lib.merge.name,[[2,3,4],[0,1]],lib.merge([2,3,4],[0,1]),[2,3,4,0,1],
 checkAssert(lib.merge.name,[[0,1,0],[2,3,4]],lib.merge([0,1,0],[2,3,4]),[0,1,0,2,3,4],"Error in merge()");
 checkAssert(lib.merge.name,[[10,20,30],[20,33,56,0,8]],lib.merge([10,20,30],[20,33,56,0,8]),[10,20,30,20,33,56,0,8],"Error in merge()");
 console.log("merge works fine");
+
+//________________________testing findIndex()____________________________
+checkAssert(lib.findIndex.name,[ ],lib.findIndex([ ],0),-1,"Error in findIndex()");
+checkAssert(lib.findIndex.name,[2,3,4,4],lib.findIndex([2,3,4,4],4),2,"Error in findIndex()");
+checkAssert(lib.findIndex.name,[0,1,0],lib.findIndex([0,1,0],0),0,"Error in findIndex()");
+checkAssert(lib.findIndex.name,[10,20,30],lib.findIndex([10,20,30],12),-1,"Error in findIndex()");
+console.log("findIndex works fine");

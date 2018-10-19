@@ -76,3 +76,13 @@ const reverse = function(list) {
   return rev;
 }
 exports.reverse = reverse;
+
+const findIndex = function(list, searchElement) {
+  for(index in list) {
+    if(searchElement == list[index]) {
+      return index;
+    }
+  }
+  return -1;
+}
+exports.findIndex = findIndex;
