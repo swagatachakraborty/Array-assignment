@@ -55,6 +55,13 @@ checkAssert(lib.findMin.name,[0,1,0],lib.findMin([0,1,0]),0,"Error in findMin()"
 checkAssert(lib.findMin.name,[10,20,30],lib.findMin([10,20,30]),10,"Error in findMin()");
 console.log("findMin works fine\n");
 
+//________________________testing findMax()____________________________
+checkAssert(lib.findMax.name,[ ],lib.findMax([ ]),0,"Error in findMax()");
+checkAssert(lib.findMax.name,[2,3,4,4],lib.findMax([2,3,4,4]),4,"Error in findMax()");
+checkAssert(lib.findMax.name,[0,1,0],lib.findMax([0,1,0]),1,"Error in findMax()");
+checkAssert(lib.findMax.name,[10,20,30],lib.findMax([10,20,30]),30,"Error in findMax()");
+console.log("findMax works fine\n");
+
 //________________________testing reverse()____________________________
 checkAssert(lib.reverse.name,[ ],lib.reverse([ ]),[],"Error in reverse()");
 checkAssert(lib.reverse.name,[2,3,4,4],lib.reverse([2,3,4,4]),[4,4,3,2],"Error in reverse()");
@@ -133,3 +140,5 @@ checkAssert(lib.mapLengths.name,["swagata","chakraborty"],lib.mapLengths(["swaga
 checkAssert(lib.mapLengths.name,["","2","abc"],lib.mapLengths(["","2","abc"]),[0,1,3],"Error in mapLengths()");
 checkAssert(lib.mapLengths.name,["abcde","jj","lolopll"],lib.mapLengths(["abcde","jj","lolopll"]),[5,2,7],"Error in mapLengths()");
 console.log("mapLengths works fine\n");
+
+
