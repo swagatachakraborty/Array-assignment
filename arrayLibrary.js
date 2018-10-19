@@ -108,21 +108,29 @@ const findNthElement = function(list, requiredIndex) {
 exports.findNthElement = findNthElement;
 
 const fibonacci = function(range) {
+  let prevTerm = 0;
+  let presentTerm = 1;
   let fibo = [];
-  if(range >= 1) {
-    fibo.push(0);
-  }
-  if(range >= 2) {
-    fibo.push(1);
-  }
-  for(let count = 3; count >2 && count <= range; count++) {
-    let sum = fibo[ count-3 ] + fibo[ count-2 ];
-    fibo.push(sum);
+  for(let count = 0; count < range; count++) {
+    fibo.push(prevTerm);
+    let nextTerm = presentTerm + prevTerm ;
+    prevTerm = presentTerm;
+    presentTerm = nextTerm;
   }
   return fibo;
 }
 exports.fibonacci = fibonacci;
 
-//const   = function() {
+const extractDigits = function(number) {
+  let digitsArray = [];
+  while(number % 10) {
+    digitsArray.unshift(number % 10);
+    number = parseInt(number / 10);
+  }
+  return digitsArray;
+}
+exports.extractDigits = extractDigits;
+
+//const countNum  = function() {
 //
 //}

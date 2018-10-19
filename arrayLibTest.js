@@ -92,3 +92,9 @@ checkAssert(lib.fibonacci.name,[0],lib.fibonacci(0),[],"Error in fibonacci()");
 checkAssert(lib.fibonacci.name,[10],lib.fibonacci(2),[0,1],"Error in fibonacci()");
 console.log("fibonacci works fine\n");
 
+//________________________testing extractDigits()____________________________
+checkAssert(lib.extractDigits.name,[123],lib.extractDigits(123),[1,2,3],"Error in extractDigits()");
+checkAssert(lib.extractDigits.name,[23481],lib.extractDigits(23481),[2,3,4,8,1],"Error in extractDigits()");
+checkAssert(lib.extractDigits.name,[0],lib.extractDigits(0),[],"Error in extractDigits()");
+checkAssert(lib.extractDigits.name,[09872],lib.extractDigits(09872),[9,8,7,2],"Error in extractDigits()");
+console.log("extractDigits works fine\n");
