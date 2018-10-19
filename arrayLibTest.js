@@ -24,13 +24,12 @@ checkAssert(lib.average.name,[10,23,30],lib.average([10,23,30]),21,"Error in ave
 console.log("average works fine\n");
 
 //________________________testing splitEvenOddList()____________________________
-let error = "Error in splitEvenOddList()";
-checkAssert(lib.splitEvenOddList.name,[],lib.splitEvenOddList([]),{odd : [],even : []},error);
-checkAssert(lib.splitEvenOddList.name,[2,3,4],lib.splitEvenOddList([2,3,4]),{odd:[3], even:[2,4]},error);
-checkAssert(lib.splitEvenOddList.name,[0,1,0],lib.splitEvenOddList([0,1,0]),{odd : [1],even : [0,0]},error);
-checkAssert(lib.splitEvenOddList.name,[9,1,3],lib.splitEvenOddList([9,1,3]),{odd : [9,1,3],even : []},error);
-checkAssert(lib.splitEvenOddList.name,[12,13,21],lib.splitEvenOddList([12,13,21]),{odd : [13,21],even : [12]},error);
-checkAssert(lib.splitEvenOddList.name,[10,20,30],lib.splitEvenOddList([10,20,30]),{odd : [],even : [10,20,30]},error);
+checkAssert(lib.splitEvenOddList.name,[],lib.splitEvenOddList([]),{odd : [],even : []},"Error in splitEvenOddList()");
+checkAssert(lib.splitEvenOddList.name,[2,3,4],lib.splitEvenOddList([2,3,4]),{odd:[3], even:[2,4]},"Error in splitEvenOddList()");
+checkAssert(lib.splitEvenOddList.name,[0,1,0],lib.splitEvenOddList([0,1,0]),{odd : [1],even : [0,0]},"Error in splitEvenOddList()");
+checkAssert(lib.splitEvenOddList.name,[9,1,3],lib.splitEvenOddList([9,1,3]),{odd : [9,1,3],even : []},"Error in splitEvenOddList()");
+checkAssert(lib.splitEvenOddList.name,[12,13,21],lib.splitEvenOddList([12,13,21]),{odd : [13,21],even : [12]},"Error in splitEvenOddList()");
+checkAssert(lib.splitEvenOddList.name,[10,20,30],lib.splitEvenOddList([10,20,30]),{odd : [],even : [10,20,30]},"Error in splitEvenOddList()");
 console.log("splitEvenOddList works fine\n");
 
 //________________________testing splitList()____________________________
@@ -98,3 +97,11 @@ checkAssert(lib.extractDigits.name,[23481],lib.extractDigits(23481),[2,3,4,8,1],
 checkAssert(lib.extractDigits.name,[0],lib.extractDigits(0),[],"Error in extractDigits()");
 checkAssert(lib.extractDigits.name,[09872],lib.extractDigits(09872),[9,8,7,2],"Error in extractDigits()");
 console.log("extractDigits works fine\n");
+
+//________________________testing countAboveAndBelowThreshold()____________________________
+checkAssert(lib.countAboveAndBelowThreshold.name,[[],2],lib.countAboveAndBelowThreshold([],2),{above : 0, below : 0},"Error in countAboveAndBelowThreshold");
+checkAssert(lib.countAboveAndBelowThreshold.name,[[2,3,4],3],lib.countAboveAndBelowThreshold([2,3,4],3),{above : 1, below : 1},"Error in countAboveAndBelowThreshold");
+checkAssert(lib.countAboveAndBelowThreshold.name,[[0,1,0],1],lib.countAboveAndBelowThreshold([0,1,0],1),{above : 0, below : 2},"Error in countAboveAndBelowThreshold");
+checkAssert(lib.countAboveAndBelowThreshold.name,[[9,1,3],9],lib.countAboveAndBelowThreshold([9,1,3],9),{above : 0,below : 2},"Error in countAboveAndBelowThreshold");
+checkAssert(lib.countAboveAndBelowThreshold.name,[[12,13,21],4],lib.countAboveAndBelowThreshold([12,13,21],4),{above : 3,below : 0},"Error in countAboveAndBelowThreshold");
+console.log("countAboveAndBelowThreshold works fine\n");

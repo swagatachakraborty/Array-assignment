@@ -131,6 +131,20 @@ const extractDigits = function(number) {
 }
 exports.extractDigits = extractDigits;
 
-//const countNum  = function() {
-//
-//}
+const countAboveAndBelowThreshold = function(list, threshold) {
+  let above = 0;
+  let below = 0;
+  for(element of list) {
+    if(element > threshold) {
+      above++;
+    }
+
+    if(element < threshold) {
+    below++;
+    }
+  }
+  return { above : above, below : below };
+}
+exports.countAboveAndBelowThreshold = countAboveAndBelowThreshold;
+
+
