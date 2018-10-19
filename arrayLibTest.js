@@ -156,3 +156,11 @@ checkAssert(lib.zip.name,[[0,1,0],[2,5]],lib.zip([0,1,0],[2,5]),[[0,2],[1,5]],"E
 checkAssert(lib.zip.name,[[6,4],[10,20,30]],lib.zip([6,4],[10,20,30]),[[6,10],[4,20]],"Error in zip()");
 checkAssert(lib.zip.name,[[2,3,9],[4,0,4]],lib.zip([2,3,9],[4,0,4]),[[2,4],[3,0],[9,4]],"Error in zip()");
 console.log("zip works fine\n");
+
+//________________________testing makeUnique()____________________________
+checkAssert(lib.makeUnique.name,[ ],lib.makeUnique([]),[],"Error in makeUnique()");
+checkAssert(lib.makeUnique.name,[2,2,3,4,4],lib.makeUnique([2,2,3,4,4]),[2,3,4],"Error in makeUnique()");
+checkAssert(lib.makeUnique.name,[0,1,0],lib.makeUnique([0,1,0]),[0,1],"Error in makeUnique()");
+checkAssert(lib.makeUnique.name,[10,20,30],lib.makeUnique([10,20,30]),[10,20,30],"Error in makeUnique()");
+console.log("makeUnique works fine\n");
+

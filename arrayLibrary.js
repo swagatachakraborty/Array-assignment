@@ -199,3 +199,14 @@ const zip = function(list1, list2) {
   return zipList;
 }
 exports.zip = zip;
+
+const makeUnique = function(list) {
+  let uniqList = [];
+  for(let element of list) {
+    if(findIndex(uniqList, element) == -1) {
+      uniqList.push(element);
+    }
+  }
+  return uniqList;
+}
+exports.makeUnique = makeUnique;
