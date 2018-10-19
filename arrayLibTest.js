@@ -1,29 +1,24 @@
 //const assert = require("assert");
 const lib =  require("./arrayLibrary");
 const checkAssert = require("./testFrameWork.js").checkAssert;
-
-//const checkAssert = function(expectedOutput, actualOutput, errorMessage) {
-//  assert.deepEqual(expectedOutput,actualOutput,errorMessage);
-//}
-console.log(lib.isEven.name);
+//console.log("|Function Tested\t|Inputs\t|Actual output\t |expected Output");
 checkAssert(lib.isEven.name, [9], lib.isEven(9),false,"Error in isEven()");
 //________________________testing isEven()____________________________
-//checkAssert(lib.isEven(9),false,"Error in isEven()");
-//checkAssert(lib.isEven(1),false,"Error in isEven()");
-//checkAssert(lib.isEven(5),false,"Error in isEven()");
-//checkAssert(lib.isEven(0),true,"Error in isEven()");
-//checkAssert(lib.isEven(10),true,"Error in isEven()");
-//console.log("isEven works fine");
-//
-////________________________testing add()____________________________
-//checkAssert(lib.add([ ]),0,"Error in add()");
-//checkAssert(lib.add([2,3,4]),9,"Error in add()");
-//checkAssert(lib.add([0,1,0]),1,"Error in add()");
-//checkAssert(lib.add([10,20,30]),60,"Error in add()");
-//checkAssert(lib.add([1.34,6.8]),8.14,"Error in add()");
-//console.log("add works fine");
-//
-////________________________testing splitEvenOddList()____________________________
+checkAssert(lib.isEven.name,[9],lib.isEven(9),false,"Error in isEven()");
+checkAssert(lib.isEven.name,[1],lib.isEven(1),false,"Error in isEven()");
+checkAssert(lib.isEven.name,[5],lib.isEven(5),false,"Error in isEven()");
+checkAssert(lib.isEven.name,[0],lib.isEven(0),true,"Error in isEven()");
+checkAssert(lib.isEven.name,[10],lib.isEven(10),true,"Error in isEven()");
+console.log("isEven works fine");
+
+//________________________testing add()____________________________
+checkAssert(lib.add.name,[ ],lib.add([ ]),0,"Error in add()");
+checkAssert(lib.add.name,[2,3,4],lib.add([2,3,4]),9,"Error in add()");
+checkAssert(lib.add.name,[0,1,0],lib.add([0,1,0]),1,"Error in add()");
+checkAssert(lib.add.name,[10,20,30],lib.add([10,20,30]),60,"Error in add()");
+console.log("add works fine");
+
+//________________________testing splitEvenOddList()____________________________
 //let error = "Error in splitEvenOddList()";
 //checkAssert(lib.splitEvenOddList([]),{odd : [],even : []},error);
 //checkAssert(lib.splitEvenOddList([2,3,4]),{odd:[3], even:[2,4]},error);
