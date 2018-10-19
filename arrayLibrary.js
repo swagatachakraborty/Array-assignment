@@ -86,3 +86,13 @@ const findIndex = function(list, searchElement) {
   return -1;
 }
 exports.findIndex = findIndex;
+
+const findNthElement = function(list, requiredIndex) {
+  for(index in list) {
+    if(index == requiredIndex) {
+      return list[index];
+    }
+  }
+  return -1;
+}
+exports.findNthElement = findNthElement;
