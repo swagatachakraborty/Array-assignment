@@ -119,3 +119,17 @@ checkAssert(lib.countBelowThreshold.name,[[2,3,4],3],lib.countBelowThreshold([2,
 checkAssert(lib.countBelowThreshold.name,[[0,1,0],1],lib.countBelowThreshold([0,1,0],1),2,"Error in countBelowThreshold()");
 checkAssert(lib.countBelowThreshold.name,[[10,20,30],12],lib.countBelowThreshold([12,21,13],4),0,"Error in countBelowThreshold()");
 console.log("countBelowThreshold works fine\n");
+
+//________________________testing extractSecondElements()____________________________
+checkAssert(lib.extractSecondElements.name,[ ],lib.extractSecondElements([]),[],"Error in extractSecondElements()");
+checkAssert(lib.extractSecondElements.name,[2,3,4,4],lib.extractSecondElements([2,3,4,4]),[3,4],"Error in extractSecondElements()");
+checkAssert(lib.extractSecondElements.name,[0,1,0],lib.extractSecondElements([0,1,0]),[1],"Error in extractSecondElements()");
+checkAssert(lib.extractSecondElements.name,[10,20,30],lib.extractSecondElements([10,20,30]),[20],"Error in extractSecondElements()");
+console.log("extractSecondElements works fine\n");
+
+//________________________testing mapLengths()____________________________
+checkAssert(lib.mapLengths.name,[ ],lib.mapLengths([ ]),[],"Error in mapLengths()");
+checkAssert(lib.mapLengths.name,["swagata","chakraborty"],lib.mapLengths(["swagata","chakraborty"]),[7,11],"Error in mapLengths()");
+checkAssert(lib.mapLengths.name,["","2","abc"],lib.mapLengths(["","2","abc"]),[0,1,3],"Error in mapLengths()");
+checkAssert(lib.mapLengths.name,["abcde","jj","lolopll"],lib.mapLengths(["abcde","jj","lolopll"]),[5,2,7],"Error in mapLengths()");
+console.log("mapLengths works fine\n");

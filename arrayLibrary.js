@@ -156,3 +156,22 @@ const countBelowThreshold = function(list, threshold){
   return countAboveAndBelowThreshold(list, threshold).below ;
 }
 exports.countBelowThreshold = countBelowThreshold;
+
+const extractSecondElements = function(list) {
+  let listOfSecondElements = [];
+  for(let count = 1; count < list.length; count+=2) {
+    listOfSecondElements.push(list[count]);
+  }
+  return listOfSecondElements;
+}
+exports.extractSecondElements = extractSecondElements;
+
+const mapLengths = function(list) {
+  let mappedList = [];
+  for(element of list) {
+    mappedList.push(element.length);
+  }
+  return mappedList;
+}
+exports.mapLengths = mapLengths;
+
