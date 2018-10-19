@@ -3,20 +3,20 @@ const isEven = function(value) {
 }
 exports.isEven = isEven;
 
-const add = function(inputList) {
+const add = function(list) {
   let sum = 0;
-  for(element of inputList) {
+  for(element of list) {
    sum += element;
   }
   return sum;
 }
 exports.add = add;
 
-const splitEvenOddList  = function(inputList) {
+const splitEvenOddList  = function(list) {
   let oddList = []; 
   let evenList = [];
   let evenOddList = {even :[], odd:[]};
-  for(element of inputList) {
+  for(element of list) {
     if(!isEven(element)) {
       oddList.push(element);
     }
@@ -34,9 +34,9 @@ const splitList = function(list,requireListType) {
 }
 exports.splitList = splitList;
 
-const findMax = function(inputList) {
+const findMax = function(list) {
   let max = 0;
-  for( element of inputList ) {
+  for( element of list ) {
     if(max < element ) {
       max = element;
     }
@@ -45,9 +45,9 @@ const findMax = function(inputList) {
 }
 exports.findMax = findMax;
 
-const findMin = function(inputList) {
-  let min = findMax(inputList);
-  for( element of inputList ) {
+const findMin = function(list) {
+  let min = findMax(list);
+  for( element of list ) {
     if(min > element ) {
       min = element;
     }
@@ -56,15 +56,21 @@ const findMin = function(inputList) {
 }
 exports.findMin = findMin;
 
-//const merge = function(inputList1, inputList2) {
-//  let mergeList = [];
-//  for(element of inputList1) {
-//  }
-//}
+const merge = function(list1, list2) {
+  let mergeList = [];
+  for(element of list1) {
+    mergeList.push(element);
+  }
+  for(element of list2) {
+    mergeList.push(element);
+  }
+  return mergeList;
+}
+exports.merge = merge;
 
-const reverse = function(inputList) {
+const reverse = function(list) {
   let rev = [];
-  for( element of inputList ) {
+  for( element of list ) {
     rev.unshift(element);
   }
   return rev;
