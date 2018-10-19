@@ -44,10 +44,10 @@ checkAssert(lib.splitList.name,[12,13,21],lib.splitList([12,13,21],"even"),[12],
 checkAssert(lib.splitList.name,[10,20,30],lib.splitList([10,20,30],"even"),[10,20,30],"Error in splitList()");
 console.log("splitList works fine");
 
-//________________________testing findMax()____________________________
-checkAssert(lib.findMax.name,[ ],lib.findMax([ ]),0,"Error in findMax()");
-checkAssert(lib.findMax.name,[2,3,4,4],lib.findMax([2,3,4,4]),4,"Error in findMax()");
-checkAssert(lib.findMax.name,[0,1,0],lib.findMax([0,1,0]),1,"Error in findMax()");
-checkAssert(lib.findMax.name,[10,20,30],lib.findMax([10,20,30]),30,"Error in findMax()");
-console.log("findMax works fine");
+//________________________testing findMin()____________________________
+checkAssert(lib.findMin.name,[ ],lib.findMin([ ]),0,"Error in findMin()");
+checkAssert(lib.findMin.name,[2,3,4,4],lib.findMin([2,3,4,4]),2,"Error in findMin()");
+checkAssert(lib.findMin.name,[0,1,0],lib.findMin([0,1,0]),0,"Error in findMin()");
+checkAssert(lib.findMin.name,[10,20,30],lib.findMin([10,20,30]),10,"Error in findMin()");
+console.log("findMin works fine");
 

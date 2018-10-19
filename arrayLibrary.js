@@ -45,6 +45,16 @@ const findMax = function(array) {
 }
 exports.findMax = findMax;
 
+const findMin = function(array) {
+  let min = findMax(array);
+  for( element of array ) {
+    if(min > element ) {
+      min = element;
+    }
+  }
+  return min;
+}
+exports.findMin = findMin;
 const ascending = function() {
   
 }
