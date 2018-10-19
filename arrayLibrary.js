@@ -33,3 +33,18 @@ const splitList = function(list,requireListType) {
   return splitList[requireListType];
 }
 exports.splitList = splitList;
+
+const findMax = function(array) {
+  let max = 0;
+  for( element of array ) {
+    if(max < element ) {
+      max = element;
+    }
+  }
+  return max;
+}
+exports.findMax = findMax;
+
+const ascending = function() {
+  
+}
