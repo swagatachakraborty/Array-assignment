@@ -217,7 +217,7 @@ const union = function(list1,list2) {
 }
 exports.union = union;
 
-const createIntersectionAndDifference = function(list1,list2,requireOperation) {
+const operationOnLists = function(list1,list2) {
   let commonElements = [];
   let difference = [];
   for(element of list1) {
@@ -229,19 +229,20 @@ const createIntersectionAndDifference = function(list1,list2,requireOperation) {
       difference.push(element);
     }
   }
-  let operationOnLists = {};
-  operationOnLists["intersection"] = makeUnique(commonElements);
-  operationOnLists["difference"] = makeUnique(difference);
-  return operationOnLists[requireOperation];
+  let operationOnLists = {
+  "intersection" : makeUnique(commonElements),
+  "difference" : makeUnique(difference)
+  };
+  return operationOnLists;
 }
-exports.createIntersectionAndDifference = createIntersectionAndDifference;
+exports.operationOnLists = operationOnLists;
 
 const intersection = function(list1,list2) {
-  return createIntersectionAndDifference(list1,list2,"intersection");
+  return operationOnLists(list1,list2)["intersection"];
 }
 exports.intersection = intersection;
 
 const difference = function(list1,list2) {
-  return createIntersectionAndDifference(list1,list2,"difference");
+  return operationOnLists(list1,list2)["difference"];
 }
 exports.difference = difference;
