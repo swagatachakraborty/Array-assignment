@@ -16,6 +16,13 @@ checkAssert(lib.add.name,[0,1,0],lib.add([0,1,0]),1,"Error in add()");
 checkAssert(lib.add.name,[10,20,30],lib.add([10,20,30]),60,"Error in add()");
 console.log("add works fine\n");
 
+//________________________testing average()____________________________
+checkAssert(lib.average.name,[],lib.average([]),0,"Error in average()");
+checkAssert(lib.average.name,[2,3,4],lib.average([2,3,4]),3,"Error in average()");
+checkAssert(lib.average.name,[0,1,2],lib.average([0,1,2]),1,"Error in average()");
+checkAssert(lib.average.name,[10,23,30],lib.average([10,23,30]),21,"Error in average()");
+console.log("average works fine\n");
+
 //________________________testing splitEvenOddList()____________________________
 let error = "Error in splitEvenOddList()";
 checkAssert(lib.splitEvenOddList.name,[],lib.splitEvenOddList([]),{odd : [],even : []},error);

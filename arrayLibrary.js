@@ -11,6 +11,16 @@ const add = function(list) {
   return sum;
 }
 exports.add = add;
+ 
+const average = function(list) {
+  let sum = add(list);
+  let avg = 0;
+  if(list.length) {
+    return sum/list.length;
+  }
+  return avg;
+}
+exports.average = average;
 
 const splitEvenOddList  = function(list) {
   let oddList = []; 
@@ -112,3 +122,7 @@ const fibonacci = function(range) {
   return fibo;
 }
 exports.fibonacci = fibonacci;
+
+//const   = function() {
+//
+//}
