@@ -1,8 +1,6 @@
-//const assert = require("assert");
 const lib =  require("./arrayLibrary");
 const checkAssert = require("./testFrameWork.js").checkAssert;
-//console.log("|Function Tested\t|Inputs\t|Actual output\t |expected Output");
-checkAssert(lib.isEven.name, [9], lib.isEven(9),false,"Error in isEven()");
+
 //________________________testing isEven()____________________________
 checkAssert(lib.isEven.name,[9],lib.isEven(9),false,"Error in isEven()");
 checkAssert(lib.isEven.name,[1],lib.isEven(1),false,"Error in isEven()");
@@ -78,3 +76,12 @@ checkAssert(lib.findNthElement.name,[[2,3,4,4],3],lib.findNthElement([2,3,4,4],3
 checkAssert(lib.findNthElement.name,[[0,1,0],0],lib.findNthElement([0,1,0],0),0,"Error in findNthElement()");
 checkAssert(lib.findNthElement.name,[[10,20,30],12],lib.findNthElement([10,20,30],12),-1,"Error in findNthElement()");
 console.log("findNthElement works fine\n");
+
+//________________________testing fibonacci()____________________________
+checkAssert(lib.fibonacci.name,[9],lib.fibonacci(9),[0,1,1,2,3,5,8,13,21],"Error in fibonacci()");
+checkAssert(lib.fibonacci.name,[1],lib.fibonacci(1),[0],"Error in fibonacci()");
+checkAssert(lib.fibonacci.name,[5],lib.fibonacci(5),[0,1,1,2,3],"Error in fibonacci()");
+checkAssert(lib.fibonacci.name,[0],lib.fibonacci(0),[],"Error in fibonacci()");
+checkAssert(lib.fibonacci.name,[10],lib.fibonacci(2),[0,1],"Error in fibonacci()");
+console.log("fibonacci works fine\n");
+

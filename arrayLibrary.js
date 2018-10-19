@@ -96,3 +96,19 @@ const findNthElement = function(list, requiredIndex) {
   return -1;
 }
 exports.findNthElement = findNthElement;
+
+const fibonacci = function(range) {
+  let fibo = [];
+  if(range >= 1) {
+    fibo.push(0);
+  }
+  if(range >= 2) {
+    fibo.push(1);
+  }
+  for(let count = 3; count >2 && count <= range; count++) {
+    let sum = fibo[ count-3 ] + fibo[ count-2 ];
+    fibo.push(sum);
+  }
+  return fibo;
+}
+exports.fibonacci = fibonacci;
