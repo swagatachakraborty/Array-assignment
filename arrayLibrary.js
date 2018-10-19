@@ -147,4 +147,12 @@ const countAboveAndBelowThreshold = function(list, threshold) {
 }
 exports.countAboveAndBelowThreshold = countAboveAndBelowThreshold;
 
+const countAboveThreshold = function(list, threshold) {
+  return countAboveAndBelowThreshold(list, threshold).above ;
+}
+exports.countAboveThreshold = countAboveThreshold;
 
+const countBelowThreshold = function(list, threshold){
+  return countAboveAndBelowThreshold(list, threshold).below ;
+}
+exports.countBelowThreshold = countBelowThreshold;
