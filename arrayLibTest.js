@@ -141,4 +141,10 @@ checkAssert(lib.mapLengths.name,["","2","abc"],lib.mapLengths(["","2","abc"]),[0
 checkAssert(lib.mapLengths.name,["abcde","jj","lolopll"],lib.mapLengths(["abcde","jj","lolopll"]),[5,2,7],"Error in mapLengths()");
 console.log("mapLengths works fine\n");
 
-
+//________________________testing partition()____________________________
+checkAssert(lib.partition.name,[[],2],lib.partition([],2),[[],[]],"Error in partition");
+checkAssert(lib.partition.name,[[2,3,4],3],lib.partition([2,3,4],3),[[4],[2,3]],"Error in partition");
+checkAssert(lib.partition.name,[[0,1,0],1],lib.partition([0,1,0],1),[[],[0,1,0]],"Error in partition");
+checkAssert(lib.partition.name,[[9,1,3],9],lib.partition([9,1,3],9),[[],[9,1,3]],"Error in partition");
+checkAssert(lib.partition.name,[[12,13,21],4],lib.partition([12,13,21],4),[[12,13,21],[]],"Error in partition");
+console.log("partition works fine\n");
