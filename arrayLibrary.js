@@ -184,3 +184,18 @@ const partition = function(list,threshold) {
   return partitionList;
 }
 exports.partition = partition;
+
+const zip = function(list1, list2) {
+  let count = 0;
+  let totalZips = findMin([list1.length, list2.length]);
+  let zipList = [];
+  while(count < totalZips) {
+    let list = [];
+    list.push(list1[count]);
+    list.push(list2[count]);
+    zipList.push(list);
+    count++;
+  }
+  return zipList;
+}
+exports.zip = zip;

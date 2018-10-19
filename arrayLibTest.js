@@ -148,3 +148,11 @@ checkAssert(lib.partition.name,[[0,1,0],1],lib.partition([0,1,0],1),[[],[0,1,0]]
 checkAssert(lib.partition.name,[[9,1,3],9],lib.partition([9,1,3],9),[[],[9,1,3]],"Error in partition");
 checkAssert(lib.partition.name,[[12,13,21],4],lib.partition([12,13,21],4),[[12,13,21],[]],"Error in partition");
 console.log("partition works fine\n");
+
+//________________________testing zip()____________________________
+checkAssert(lib.zip.name,[[],[]],lib.zip([],[]),[],"Error in zip()");
+checkAssert(lib.zip.name,[[2,3],[4,4]],lib.zip([2,3],[4,4]),[[2,4],[3,4]],"Error in zip()");
+checkAssert(lib.zip.name,[[0,1,0],[2,5]],lib.zip([0,1,0],[2,5]),[[0,2],[1,5]],"Error in zip()");
+checkAssert(lib.zip.name,[[6,4],[10,20,30]],lib.zip([6,4],[10,20,30]),[[6,10],[4,20]],"Error in zip()");
+checkAssert(lib.zip.name,[[2,3,9],[4,0,4]],lib.zip([2,3,9],[4,0,4]),[[2,4],[3,0],[9,4]],"Error in zip()");
+console.log("zip works fine\n");
