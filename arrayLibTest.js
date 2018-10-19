@@ -180,3 +180,10 @@ checkAssert(lib.intersection.name,[[0,1,0],[4,8,34,10]],lib.intersection([0,1,0]
 checkAssert(lib.intersection.name,[[10,20,30],[20,20,30,12]],lib.intersection([10,20,30],[20,20,30,12]),[20,30],"Error in intersection()");
 console.log("intersection works fine\n");
 
+//________________________testing difference()____________________________
+checkAssert(lib.difference.name,[[],[]],lib.difference([],[]),[],"Error in difference()");
+checkAssert(lib.difference.name,[[12,6],[]],lib.difference([12,6],[]),[12,6],"Error in difference()");
+checkAssert(lib.difference.name,[[2,2,3,4,4],[1,2,8]],lib.difference([2,2,3,4,4],[1,2,8]),[3,4],"Error in difference()");
+checkAssert(lib.difference.name,[[0,1,0],[4,8,34,10]],lib.difference([0,1,0],[4,8,34,10]),[0,1],"Error in difference()");
+checkAssert(lib.difference.name,[[10,20,30],[20,20,30,12]],lib.difference([10,20,30],[20,20,30,12]),[10],"Error in difference()");
+console.log("difference works fine\n");

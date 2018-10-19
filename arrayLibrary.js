@@ -217,13 +217,31 @@ const union = function(list1,list2) {
 }
 exports.union = union;
 
-const intersection = function(list1,list2) {
+const createIntersectionAndDifference = function(list1,list2,requireOperation) {
   let commonElements = [];
+  let difference = [];
   for(element of list1) {
-    if(findIndex(list2,element) != -1) {
+    let index = findIndex(list2,element);
+    if(index != -1) {
       commonElements.push(element);
     }
+    if(index == -1) {
+      difference.push(element);
+    }
   }
-  return makeUnique(commonElements);
+  let operationOnLists = {};
+  operationOnLists["intersection"] = makeUnique(commonElements);
+  operationOnLists["difference"] = makeUnique(difference);
+  return operationOnLists[requireOperation];
+}
+exports.createIntersectionAndDifference = createIntersectionAndDifference;
+
+const intersection = function(list1,list2) {
+  return createIntersectionAndDifference(list1,list2,"intersection");
 }
 exports.intersection = intersection;
+
+const difference = function(list1,list2) {
+  return createIntersectionAndDifference(list1,list2,"difference");
+}
+exports.difference = difference;
