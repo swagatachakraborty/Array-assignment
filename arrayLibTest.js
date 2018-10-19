@@ -171,3 +171,12 @@ checkAssert(lib.union.name,[[2,2,3,4,4],[1,2,8]],lib.union([2,2,3,4,4],[1,2,8]),
 checkAssert(lib.union.name,[[0,1,0],[4,8,34,10]],lib.union([0,1,0],[4,8,34,10]),[0,1,4,8,34,10],"Error in union()");
 checkAssert(lib.union.name,[[10,20,30],[22,14,6]],lib.union([10,20,30],[22,14,6]),[10,20,30,22,14,6],"Error in union()");
 console.log("union works fine\n");
+
+//________________________testing intersection()____________________________
+checkAssert(lib.intersection.name,[[],[]],lib.intersection([],[]),[],"Error in intersection()");
+checkAssert(lib.intersection.name,[[12,6],[]],lib.intersection([12,6],[]),[],"Error in intersection()");
+checkAssert(lib.intersection.name,[[2,2,3,4,4],[1,2,8]],lib.intersection([2,2,3,4,4],[1,2,8]),[2],"Error in intersection()");
+checkAssert(lib.intersection.name,[[0,1,0],[4,8,34,10]],lib.intersection([0,1,0],[4,8,34,10]),[],"Error in intersection()");
+checkAssert(lib.intersection.name,[[10,20,30],[20,20,30,12]],lib.intersection([10,20,30],[20,20,30,12]),[20,30],"Error in intersection()");
+console.log("intersection works fine\n");
+

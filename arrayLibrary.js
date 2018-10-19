@@ -216,3 +216,14 @@ const union = function(list1,list2) {
   return makeUnique(margeArray);
 }
 exports.union = union;
+
+const intersection = function(list1,list2) {
+  let commonElements = [];
+  for(element of list1) {
+    if(findIndex(list2,element) != -1) {
+      commonElements.push(element);
+    }
+  }
+  return makeUnique(commonElements);
+}
+exports.intersection = intersection;
