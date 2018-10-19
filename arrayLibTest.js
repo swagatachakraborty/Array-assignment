@@ -164,3 +164,10 @@ checkAssert(lib.makeUnique.name,[0,1,0],lib.makeUnique([0,1,0]),[0,1],"Error in 
 checkAssert(lib.makeUnique.name,[10,20,30],lib.makeUnique([10,20,30]),[10,20,30],"Error in makeUnique()");
 console.log("makeUnique works fine\n");
 
+//________________________testing union()____________________________
+checkAssert(lib.union.name,[[],[]],lib.union([],[]),[],"Error in union()");
+checkAssert(lib.union.name,[[12,6],[]],lib.union([12,6],[]),[12,6],"Error in union()");
+checkAssert(lib.union.name,[[2,2,3,4,4],[1,2,8]],lib.union([2,2,3,4,4],[1,2,8]),[2,3,4,1,8],"Error in union()");
+checkAssert(lib.union.name,[[0,1,0],[4,8,34,10]],lib.union([0,1,0],[4,8,34,10]),[0,1,4,8,34,10],"Error in union()");
+checkAssert(lib.union.name,[[10,20,30],[22,14,6]],lib.union([10,20,30],[22,14,6]),[10,20,30,22,14,6],"Error in union()");
+console.log("union works fine\n");

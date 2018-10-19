@@ -210,3 +210,9 @@ const makeUnique = function(list) {
   return uniqList;
 }
 exports.makeUnique = makeUnique;
+
+const union = function(list1,list2) {
+  let margeArray = merge(list1,list2);
+  return makeUnique(margeArray);
+}
+exports.union = union;
