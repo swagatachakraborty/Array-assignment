@@ -5,8 +5,8 @@ const checkAssert = require("./testFrameWork.js").checkAssert;
 //const checkAssert = function(expectedOutput, actualOutput, errorMessage) {
 //  assert.deepEqual(expectedOutput,actualOutput,errorMessage);
 //}
-
-checkAssert( lib.isEven(9),false,"Error in isEven()");
+console.log(lib.isEven.name);
+checkAssert(lib.isEven.name, [9], lib.isEven(9),false,"Error in isEven()");
 //________________________testing isEven()____________________________
 //checkAssert(lib.isEven(9),false,"Error in isEven()");
 //checkAssert(lib.isEven(1),false,"Error in isEven()");
