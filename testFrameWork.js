@@ -5,8 +5,8 @@ const checkAssert = function(func, inputs, actualOutput, expectedOutput, errorMe
   assert.deepEqual(expectedOutput,actualOutput,errorMessage);
 }
 
-const generateTestReports  = function(func, inputs, actualOutput, expectedOutput) {
-  console.log(func,"\t\t|",inputs,"\t\t|",actualOutput,"\t\t|",expectedOutput);
+const generateTestReports = function(func, inputs, actualOutput, expectedOutput) {
+  console.log(func,"\t\t",inputs,"\t\t",actualOutput,"\t\t",expectedOutput);
 }
 
 exports.checkAssert = checkAssert;
