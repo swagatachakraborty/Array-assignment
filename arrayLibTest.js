@@ -203,3 +203,12 @@ checkAssert(lib.isSubset.name,[[2,7,3],[2,3,7,1]],lib.isSubset([2,7,3],[2,3,7,1]
 checkAssert(lib.isSubset.name,[[1,29,6],[29,1]],lib.isSubset([1,29,6],[29,1]),true,"Error in isSubset()");
 checkAssert(lib.isSubset.name,[[1,5,6],[]],lib.isSubset([1,5,6],[]),true,"Error in isSubset()");
 console.log("isSubset works fine\n");
+
+//________________________testing rotate()____________________________
+checkAssert(lib.rotate.name,[[ ],0],lib.rotate([ ],0),[],"Error in rotate()");
+checkAssert(lib.rotate.name,[[2,3,4],3],lib.rotate([2,3,4],3),[2,3,4],"Error in rotate()");
+checkAssert(lib.rotate.name,[[0,1,0],1],lib.rotate([0,1,0],1),[0,0,1],"Error in rotate()");
+checkAssert(lib.rotate.name,[[10,20,30],4],lib.rotate([12,21,13],4),[13,12,21],"Error in rotate()");
+checkAssert(lib.rotate.name,[[2,2,9,8,4,12,3,4],3],lib.rotate([2,2,9,8,4,12,3,4],3),[12,3,4,2,2,9,8,4],"Error in rotate()");
+checkAssert(lib.rotate.name,[[0,1,0,1,2,3],6],lib.rotate([0,1,0,1,2,3],6),[0,1,0,1,2,3],"Error in rotate()");
+console.log("rotate works fine\n");
