@@ -212,3 +212,11 @@ checkAssert(lib.rotate.name,[[10,20,30],4],lib.rotate([12,21,13],4),[13,12,21],"
 checkAssert(lib.rotate.name,[[2,2,9,8,4,12,3,4],3],lib.rotate([2,2,9,8,4,12,3,4],3),[12,3,4,2,2,9,8,4],"Error in rotate()");
 checkAssert(lib.rotate.name,[[0,1,0,1,2,3],6],lib.rotate([0,1,0,1,2,3],6),[0,1,0,1,2,3],"Error in rotate()");
 console.log("rotate works fine\n");
+
+//________________________testing sortAscending()____________________________
+checkAssert(lib.sortAscending.name,[ ],lib.sortAscending([]),[],"Error in sortAscending()");
+//checkAssert(lib.sortAscending.name,[2,2,3,4,4],lib.sortAscending([7,2,0,4,4]),[2,3,4],"Error in sortAscending()");
+//checkAssert(lib.sortAscending.name,[0,1,0],lib.sortAscending([0,1,0]),[0,1],"Error in sortAscending()");
+checkAssert(lib.sortAscending.name,[10,20,30],lib.sortAscending([10,20,30]),[10,20,30],"Error in sortAscending()");
+console.log("sortAscending works fine\n");
+

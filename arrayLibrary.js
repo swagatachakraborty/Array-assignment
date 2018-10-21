@@ -267,3 +267,15 @@ const rotate = function(list,shift) {
   return rotateList;
 }
 exports.rotate = rotate;
+
+const sortAscending = function(list) {
+  let ascendinglist = [];
+  let min = findMin(list) - 1;
+  for(let element in list) {
+    let sublist = filterByThreshold(list,min).above.list;
+    min = findMin(sublist);
+    ascendinglist.push(min);
+  }
+  return ascendinglist;
+}
+exports.sortAscending = sortAscending;
