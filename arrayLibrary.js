@@ -66,14 +66,7 @@ const findMin = function(list) {
 exports.findMin = findMin;
 
 const merge = function(list1, list2) {
-  let mergeList = [];
-  for(element of list1) {
-    mergeList.push(element);
-  }
-  for(element of list2) {
-    mergeList.push(element);
-  }
-  return mergeList;
+  return list1.concat(list2);
 }
 exports.merge = merge;
 
@@ -130,31 +123,30 @@ const extractDigits = function(number) {
 }
 exports.extractDigits = extractDigits;
 
-const filterByThreshold = function(inputList, threshold) {
-  let above = {list : [],count : 0};
-  let below = {list : [],count : 0};
-  for(element of inputList) {
+const partByValue = function(threshold) {
+  return function(list, element) {
     if(element > threshold) {
-      above.list.push(element);
-      above.count++;
+      list[0].push(element);
+      return list;
     }
-
-    if(element <= threshold) {
-      below.list.push(element);
-      below.count++;
-    }
+    list[1].push(element);
+    return list;
   }
-  return { above : above, below : below };
 }
-exports.filterByThreshold = filterByThreshold;
+
+const partition = function(list, threshold) {
+  let partByThreshold = partByValue(threshold);
+  return list.reduce(partByThreshold,[[],[]]);
+}
+exports.partition = partition;
 
 const countAboveThreshold = function(list, threshold) {
-  return filterByThreshold(list, threshold).above.count ;
+  return partition(list, threshold)[0].length ;
 }
 exports.countAboveThreshold = countAboveThreshold;
 
 const countBelowThreshold = function(list, threshold){
-  return filterByThreshold(list, threshold).below.count ;
+  return partition(list, threshold)[1].length ;
 }
 exports.countBelowThreshold = countBelowThreshold;
 
@@ -175,14 +167,6 @@ const mapLengths = function(list) {
   return mappedList;
 }
 exports.mapLengths = mapLengths;
-
-const partition = function(list,threshold) {
-  let partitionList = [];
-  partitionList.push(filterByThreshold(list,threshold).above.list);
-  partitionList.push(filterByThreshold(list,threshold).below.list);
-  return partitionList;
-}
-exports.partition = partition;
 
 const zip = function(list1, list2) {
   let count = 0;
@@ -271,7 +255,7 @@ const sortAscending = function(list) {
   let ascendingList = [];
   let min = findMin(list) - 1;
   for(let element in list) {
-    let subList = filterByThreshold(list,min).above.list;
+    let subList = partition(list,min)[0];
     min = findMin(subList);
     ascendingList.push(min);
   }
