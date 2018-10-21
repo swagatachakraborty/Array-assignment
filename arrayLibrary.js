@@ -281,7 +281,25 @@ const sortAscending = function(list) {
 exports.sortAscending = sortAscending;
 
 const sortDescending  = function(list) {
-  let ascendingList = sortAscending(list);
-  return reverse(ascendingList);
+  let descendingList = sortAscending(list);
+  return reverse(descendingList);
 }
 exports.sortDescending = sortDescending;
+
+const isAscending = function(list) {
+  let ascendingList = sortAscending(list);
+  if(list.toString() == ascendingList.toString()) {
+    return true;
+  }
+  return false;
+}
+exports.isAscending = isAscending;
+
+const isDescending = function(list) {
+  let ascendingList = sortDescending(list);
+  if(list.toString() == ascendingList.toString()) {
+    return true;
+  }
+  return false;
+}
+exports.isDescending = isDescending;

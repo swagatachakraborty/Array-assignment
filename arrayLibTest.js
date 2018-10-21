@@ -225,4 +225,23 @@ checkAssert(lib.sortDescending.name,[ ],lib.sortDescending([]),[],"Error in sort
 //checkAssert(lib.sortDescending.name,[2,2,3,4,4],lib.sortDescending([7,2,0,4,4]),[2,3,4],"Error in sortDescending()");
 //checkAssert(lib.sortDescending.name,[0,1,0],lib.sortDescending([0,1,0]),[0,1],"Error in sortDescending()");
 checkAssert(lib.sortDescending.name,[10,20,30],lib.sortDescending([10,20,30]),[30,20,10],"Error in sortDescending()");
+checkAssert(lib.sortDescending.name,[30,20,10],lib.sortDescending([30,20,10]),[30,20,10],"Error in sortDescending()");
 console.log("sortDescending works fine\n");
+
+//________________________testing isAscending()____________________________
+checkAssert(lib.isAscending.name,[ ],lib.isAscending([]),true,"Error in isAscending()");
+//checkAssert(lib.isAscending.name,[2,2,3,4,4],lib.isAscending([7,2,0,4,4]),false,"Error in isAscending()");
+//checkAssert(lib.isAscending.name,[0,1,0],lib.isAscending([0,1,0]),false,"Error in isAscending()");
+checkAssert(lib.isAscending.name,[10,20,30],lib.isAscending([10,20,30]),true,"Error in isAscending()");
+checkAssert(lib.isAscending.name,[30,20,10],lib.isAscending([30,20,10]),false,"Error in isAscending()");
+console.log("isAscending works fine\n");
+
+//________________________testing isDescending()____________________________
+checkAssert(lib.isDescending.name,[ ],lib.isDescending([]),true,"Error in isDescending()");
+//checkAssert(lib.isDescending.name,[2,2,3,4,4],lib.isDescending([7,2,0,4,4]),false,"Error in isDescending()");
+//checkAssert(lib.isDescending.name,[0,1,0],lib.isDescending([0,1,0]),false,"Error in isDescending()");
+checkAssert(lib.isDescending.name,[10,20,30],lib.isDescending([10,20,30]),false,"Error in isDescending()");
+checkAssert(lib.isDescending.name,[30,20,10],lib.isDescending([30,20,10]),true,"Error in isDescending()");
+console.log("isDescending works fine\n");
+
+
