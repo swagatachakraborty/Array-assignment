@@ -48,6 +48,18 @@ checkAssert(lib.splitList.name,[12,13,21],lib.splitList([12,13,21],"even"),[12],
 checkAssert(lib.splitList.name,[10,20,30],lib.splitList([10,20,30],"even"),[10,20,30],"Error in splitList()");
 console.log("splitList works fine\n");
 
+//________________________testing returnGreatest()____________________________
+checkAssert(lib.returnGreatest.name,[1,1],lib.returnGreatest(1,1),1,"Error in returnGreatest()");
+checkAssert(lib.returnGreatest.name,[2,3],lib.returnGreatest(2,3),3,"Error in returnGreatest()");
+checkAssert(lib.returnGreatest.name,[1,0],lib.returnGreatest(1,0),1,"Error in returnGreatest()");
+console.log("returnGreatest works fine\n");
+
+//________________________testing returnSmallest()____________________________
+checkAssert(lib.returnSmallest.name,[1,1],lib.returnSmallest(1,1),1,"Error in returnSmallest()");
+checkAssert(lib.returnSmallest.name,[2,3],lib.returnSmallest(2,3),2,"Error in returnSmallest()");
+checkAssert(lib.returnSmallest.name,[1,0],lib.returnSmallest(1,0),0,"Error in returnSmallest()");
+console.log("returnSmallest works fine\n");
+
 //________________________testing findMin()____________________________
 checkAssert(lib.findMin.name,[ ],lib.findMin([ ]),0,"Error in findMin()");
 checkAssert(lib.findMin.name,[2,3,4,4],lib.findMin([2,3,4,4]),2,"Error in findMin()");
@@ -243,5 +255,4 @@ checkAssert(lib.isDescending.name,[ ],lib.isDescending([]),true,"Error in isDesc
 checkAssert(lib.isDescending.name,[10,20,30],lib.isDescending([10,20,30]),false,"Error in isDescending()");
 checkAssert(lib.isDescending.name,[30,20,10],lib.isDescending([30,20,10]),true,"Error in isDescending()");
 console.log("isDescending works fine\n");
-
 

@@ -18,15 +18,17 @@ const average = function(list) {
 }
 exports.average = average;
 
+const categorizeElement = function(splitObject,element){
+  if(isEven(element)) { 
+    splitObject["even"].push(element); 
+    return splitObject; 
+  }
+  splitObject["odd"].push(element);
+  return splitObject;
+}
+
 const splitEvenOddList  = function(list) {
-  return list.reduce(function(splitObject,element){
-    if(isEven(element)) { 
-      splitObject["even"].push(element); 
-      return splitObject; 
-    }
-    splitObject["odd"].push(element);
-    return splitObject;
-  },{even:[],odd:[]});
+  return list.reduce(categorizeElement, {even:[],odd:[]});
 }
 exports.splitEvenOddList = splitEvenOddList;
 
@@ -36,22 +38,30 @@ const splitList = function(list,requireListType) {
 }
 exports.splitList = splitList;
 
+const returnGreatest = function(value1,value2) {
+  if(value1>value2) {
+    return value1;
+  }
+  return value2;
+}
+exports.returnGreatest = returnGreatest;
+
+const returnSmallest = function(value1,value2) {
+  if(value1<value2) {
+    return value1;
+  }
+  return value2;
+}
+exports.returnSmallest = returnSmallest;
+
 const findMax = function(list) {
-  return list.reduce(function(value1,value2) {
-    if(value1>value2) return value1;
-    return value2;
-  },0);
+  return list.reduce(returnGreatest,0);
 }
 exports.findMax = findMax;
 
 const findMin = function(list) {
   let min = findMax(list);
-  for( element of list ) {
-    if(min > element ) {
-      min = element;
-    }
-  }
-  return min;
+  return list.reduce(returnSmallest,min);
 }
 exports.findMin = findMin;
 
