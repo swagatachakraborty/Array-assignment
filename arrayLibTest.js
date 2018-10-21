@@ -215,8 +215,14 @@ console.log("rotate works fine\n");
 
 //________________________testing sortAscending()____________________________
 checkAssert(lib.sortAscending.name,[ ],lib.sortAscending([]),[],"Error in sortAscending()");
-//checkAssert(lib.sortAscending.name,[2,2,3,4,4],lib.sortAscending([7,2,0,4,4]),[2,3,4],"Error in sortAscending()");
-//checkAssert(lib.sortAscending.name,[0,1,0],lib.sortAscending([0,1,0]),[0,1],"Error in sortAscending()");
+//checkAssert(lib.sortAscending.name,[2,2,3,4,4],lib.sortAscending([7,2,0,4,4]),[0,2,4,4,7],"Error in sortAscending()");
+//checkAssert(lib.sortAscending.name,[0,1,0],lib.sortAscending([0,1,0]),[0,0,1],"Error in sortAscending()");
 checkAssert(lib.sortAscending.name,[10,20,30],lib.sortAscending([10,20,30]),[10,20,30],"Error in sortAscending()");
 console.log("sortAscending works fine\n");
 
+//________________________testing sortDescending()____________________________
+checkAssert(lib.sortDescending.name,[ ],lib.sortDescending([]),[],"Error in sortDescending()");
+//checkAssert(lib.sortDescending.name,[2,2,3,4,4],lib.sortDescending([7,2,0,4,4]),[2,3,4],"Error in sortDescending()");
+//checkAssert(lib.sortDescending.name,[0,1,0],lib.sortDescending([0,1,0]),[0,1],"Error in sortDescending()");
+checkAssert(lib.sortDescending.name,[10,20,30],lib.sortDescending([10,20,30]),[30,20,10],"Error in sortDescending()");
+console.log("sortDescending works fine\n");

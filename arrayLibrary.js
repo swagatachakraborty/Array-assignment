@@ -269,13 +269,19 @@ const rotate = function(list,shift) {
 exports.rotate = rotate;
 
 const sortAscending = function(list) {
-  let ascendinglist = [];
+  let ascendingList = [];
   let min = findMin(list) - 1;
   for(let element in list) {
-    let sublist = filterByThreshold(list,min).above.list;
-    min = findMin(sublist);
-    ascendinglist.push(min);
+    let subList = filterByThreshold(list,min).above.list;
+    min = findMin(subList);
+    ascendingList.push(min);
   }
-  return ascendinglist;
+  return ascendingList;
 }
 exports.sortAscending = sortAscending;
+
+const sortDescending  = function(list) {
+  let ascendingList = sortAscending(list);
+  return reverse(ascendingList);
+}
+exports.sortDescending = sortDescending;
