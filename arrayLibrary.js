@@ -19,17 +19,25 @@ const average = function(list) {
 exports.average = average;
 
 const splitEvenOddList  = function(list) {
-  let oddList = []; 
-  let evenList = [];
-  let evenOddList = {even :[], odd:[]};
-  for(element of list) {
-    if(!isEven(element)) {
-      oddList.push(element);
+  return list.reduce(function(splitObject,element){
+    if(isEven(element)) { 
+      splitObject["even"].push(element); 
+      return splitObject; 
     }
-    if(isEven(element)) {
-      evenList.push(element);
-    }
-  }
+    splitObject["odd"].push(element);
+    return splitObject;
+  },{even:[],odd:[]});
+//  let oddList = []; 
+//  let evenList = [];
+//  let evenOddList = {even :[], odd:[]};
+//  for(element of list) {
+//    if(!isEven(element)) {
+//      oddList.push(element);
+//    }
+//    if(isEven(element)) {
+//      evenList.push(element);
+//    }
+//  }
   return { odd : oddList, even : evenList};
 }
 exports.splitEvenOddList = splitEvenOddList;
