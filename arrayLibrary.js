@@ -160,11 +160,10 @@ const extractSecondElements = function(list) {
 exports.extractSecondElements = extractSecondElements;
 
 const mapLengths = function(list) {
-  let mappedList = [];
-  for(element of list) {
-    mappedList.push(element.length);
-  }
-  return mappedList;
+  return list.reduce( function(mapedList,element){
+    mapedList.push(element.length);
+    return mapedList;
+  },[]);
 }
 exports.mapLengths = mapLengths;
 
