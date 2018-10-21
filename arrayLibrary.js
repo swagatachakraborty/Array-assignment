@@ -27,18 +27,6 @@ const splitEvenOddList  = function(list) {
     splitObject["odd"].push(element);
     return splitObject;
   },{even:[],odd:[]});
-//  let oddList = []; 
-//  let evenList = [];
-//  let evenOddList = {even :[], odd:[]};
-//  for(element of list) {
-//    if(!isEven(element)) {
-//      oddList.push(element);
-//    }
-//    if(isEven(element)) {
-//      evenList.push(element);
-//    }
-//  }
-  return { odd : oddList, even : evenList};
 }
 exports.splitEvenOddList = splitEvenOddList;
 
@@ -49,13 +37,10 @@ const splitList = function(list,requireListType) {
 exports.splitList = splitList;
 
 const findMax = function(list) {
-  let max = 0;
-  for( element of list ) {
-    if(max < element ) {
-      max = element;
-    }
-  }
-  return max;
+  return list.reduce(function(value1,value2) {
+    if(value1>value2) return value1;
+    return value2;
+  },0);
 }
 exports.findMax = findMax;
 
