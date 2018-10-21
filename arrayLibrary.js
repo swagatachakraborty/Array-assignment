@@ -4,11 +4,7 @@ const isEven = function(value) {
 exports.isEven = isEven;
 
 const add = function(list) {
-  let sum = 0;
-  for(element of list) {
-   sum += element;
-  }
-  return sum;
+ return list.reduce(function(num1,num2){return num1+num2},0);
 }
 exports.add = add;
  
