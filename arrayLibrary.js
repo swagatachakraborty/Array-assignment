@@ -70,12 +70,13 @@ const merge = function(list1, list2) {
 }
 exports.merge = merge;
 
+const insertAtBegining = function(list,element) {
+  list.unshift(element);
+  return list;
+}
+
 const reverse = function(list) {
-  let rev = [];
-  for( element of list ) {
-    rev.unshift(element);
-  }
-  return rev;
+  return list.reduce(insertAtBegining,[]);
 }
 exports.reverse = reverse;
 
