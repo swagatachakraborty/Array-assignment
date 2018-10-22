@@ -81,12 +81,7 @@ const reverse = function(list) {
 exports.reverse = reverse;
 
 const findIndex = function(list, searchElement) {
-  for(index in list) {
-    if(searchElement == list[index]) {
-      return index;
-    }
-  }
-  return -1;
+  return list.indexOf(searchElement);
 }
 exports.findIndex = findIndex;
 
