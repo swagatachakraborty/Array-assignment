@@ -164,18 +164,23 @@ const mapLengths = function(list) {
 }
 exports.mapLengths = mapLengths;
 
-const zip = function(list1, list2) {
-  let count = 0;
-  let totalZips = findMin([list1.length, list2.length]);
-  let zipList = [];
-  while(count < totalZips) {
-    let list = [];
-    list.push(list1[count]);
-    list.push(list2[count]);
-    zipList.push(list);
-    count++;
+const zipWith  = function(list) {
+  let index = 0;
+  return function(zippedList,element) {
+    let zip = [];
+    zip.push(element);
+    zip.push(list[index]);
+    index++;
+    if(!zip.includes(undefined)){
+      zippedList.push(zip);
+    }
+    return zippedList;
   }
-  return zipList;
+}
+
+const zip = function(list1, list2) {
+  let zipWithList2 = zipWith(list2);
+  return list1.reduce(zipWithList2,[]) ;
 }
 exports.zip = zip;
 
