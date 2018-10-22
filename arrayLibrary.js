@@ -184,6 +184,13 @@ const zip = function(list1, list2) {
 }
 exports.zip = zip;
 
+const insertIfNotPresent = function(list,element) {
+  if(!list.includes(element)){
+    list.push(element);
+  }
+  return list;
+}
+
 const makeUnique = function(list) {
   let uniqList = [];
   for(let element of list) {
