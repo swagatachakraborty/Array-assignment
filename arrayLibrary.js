@@ -70,13 +70,13 @@ const merge = function(list1, list2) {
 }
 exports.merge = merge;
 
-const insertAtBegining = function(list,element) {
+const insertAtBeginning = function(list,element) {
   list.unshift(element);
   return list;
 }
 
 const reverse = function(list) {
-  return list.reduce(insertAtBegining,[]);
+  return list.reduce(insertAtBeginning,[]);
 }
 exports.reverse = reverse;
 
@@ -150,11 +150,13 @@ const extractSecondElements = function(list) {
 }
 exports.extractSecondElements = extractSecondElements;
 
+const insertLengthOfString = function(mapedList,string){
+  mapedList.push(string.length);
+  return mapedList;
+}
+
 const mapLengths = function(list) {
-  return list.reduce( function(mapedList,element){
-    mapedList.push(element.length);
-    return mapedList;
-  },[]);
+  return list.reduce(insertLengthOfString,[]);
 }
 exports.mapLengths = mapLengths;
 
