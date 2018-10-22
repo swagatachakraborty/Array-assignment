@@ -141,22 +141,26 @@ const countBelowThreshold = function(list, threshold){
 }
 exports.countBelowThreshold = countBelowThreshold;
 
-const extractSecondElements = function(list) {
-  let listOfSecondElements = [];
-  for(let count = 1; count < list.length; count+=2) {
-    listOfSecondElements.push(list[count]);
+const insertEvenIndexValues = function(object,element) {
+  if(object.index % 2 == 0){
+    object.list.push(element);
   }
-  return listOfSecondElements;
+  object.index++;
+  return object;
+}
+
+const extractSecondElements = function(list) {
+  return list.reduce(insertEvenIndexValues,{index:1, list:[]}).list;
 }
 exports.extractSecondElements = extractSecondElements;
 
-const insertLengthOfString = function(mapedList,string){
+const insertStringLength = function(mapedList,string){
   mapedList.push(string.length);
   return mapedList;
 }
 
 const mapLengths = function(list) {
-  return list.reduce(insertLengthOfString,[]);
+  return list.reduce(insertStringLength,[]);
 }
 exports.mapLengths = mapLengths;
 
