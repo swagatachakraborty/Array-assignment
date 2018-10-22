@@ -22,15 +22,15 @@ const repeatSpace = repeat(" ");
 const repeatDash = repeat("-");
 
 const createBorder = function() {
-  let border = repeatDash(170) ;
+  let border = repeatDash(150) ;
   console.log(border);
 }
 
 const createHeader = function() {
-  let functionHeader = "   | " + leftJustifier("FunctionName",30) + " | ";
+  let functionHeader = "Sl.| " + leftJustifier("FunctionName",30) + " | ";
   functionHeader += leftJustifier("Inputs",30) + " | ";
   functionHeader += leftJustifier("Actual Output",50) + " | ";
-  functionHeader += leftJustifier("Expected Output",50) ;
+  functionHeader += leftJustifier("Expected Output",30) ;
   createBorder();
   console.log(functionHeader);
   createBorder();

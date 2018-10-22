@@ -110,12 +110,7 @@ const fibonacci = function(range) {
 exports.fibonacci = fibonacci;
 
 const extractDigits = function(number) {
-  let digitsArray = [];
-  while(number % 10) {
-    digitsArray.unshift(number % 10);
-    number = parseInt(number / 10);
-  }
-  return digitsArray;
+  return number.toString().split("");
 }
 exports.extractDigits = extractDigits;
 
