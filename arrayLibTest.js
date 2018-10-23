@@ -9,12 +9,12 @@ checkAssert(lib.isEven.name,[0],lib.isEven(0),true,"Error in isEven()");
 checkAssert(lib.isEven.name,[10],lib.isEven(10),true,"Error in isEven()");
 console.log("isEven works fine\n");
 
-//________________________testing add()____________________________
-checkAssert(lib.add.name,[ ],lib.add([ ]),0,"Error in add()");
-checkAssert(lib.add.name,[2,3,4],lib.add([2,3,4]),9,"Error in add()");
-checkAssert(lib.add.name,[0,1,0],lib.add([0,1,0]),1,"Error in add()");
-checkAssert(lib.add.name,[10,20,30],lib.add([10,20,30]),60,"Error in add()");
-console.log("add works fine\n");
+//________________________testing addElements()____________________________
+checkAssert(lib.addElements.name,[ ],lib.addElements([ ]),0,"Error in addElements()");
+checkAssert(lib.addElements.name,[2,3,4],lib.addElements([2,3,4]),9,"Error in addElements()");
+checkAssert(lib.addElements.name,[0,1,0],lib.addElements([0,1,0]),1,"Error in addElements()");
+checkAssert(lib.addElements.name,[10,20,30],lib.addElements([10,20,30]),60,"Error in addElements()");
+console.log("addElements works fine\n");
 
 //________________________testing average()____________________________
 checkAssert(lib.average.name,[],lib.average([]),0,"Error in average()");

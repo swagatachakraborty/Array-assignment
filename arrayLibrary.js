@@ -3,13 +3,17 @@ const isEven = function(value) {
 }
 exports.isEven = isEven;
 
-const add = function(list) {
- return list.reduce(function(num1,num2){return num1+num2},0);
+const add = function(num1,num2) {
+  return num1+num2;
 }
-exports.add = add;
+
+const addElements = function(list) {
+  return list.reduce(add,0);
+}
+exports.addElements = addElements;
  
 const average = function(list) {
-  let sum = add(list);
+  let sum = addElements(list);
   let avg = 0;
   if(list.length) {
     return sum/list.length;
