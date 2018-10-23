@@ -23,14 +23,14 @@ checkAssert(lib.average.name,[0,1,2],lib.average([0,1,2]),1,"Error in average()"
 checkAssert(lib.average.name,[10,23,30],lib.average([10,23,30]),21,"Error in average()");
 console.log("average works fine\n");
 
-//________________________testing splitEvenOddList()____________________________
-checkAssert(lib.splitEvenOddList.name,[],lib.splitEvenOddList([]),{odd : [],even : []},"Error in splitEvenOddList()");
-checkAssert(lib.splitEvenOddList.name,[2,3,4],lib.splitEvenOddList([2,3,4]),{odd:[3], even:[2,4]},"Error in splitEvenOddList()");
-checkAssert(lib.splitEvenOddList.name,[0,1,0],lib.splitEvenOddList([0,1,0]),{odd : [1],even : [0,0]},"Error in splitEvenOddList()");
-checkAssert(lib.splitEvenOddList.name,[9,1,3],lib.splitEvenOddList([9,1,3]),{odd : [9,1,3],even : []},"Error in splitEvenOddList()");
-checkAssert(lib.splitEvenOddList.name,[12,13,21],lib.splitEvenOddList([12,13,21]),{odd : [13,21],even : [12]},"Error in splitEvenOddList()");
-checkAssert(lib.splitEvenOddList.name,[10,20,30],lib.splitEvenOddList([10,20,30]),{odd : [],even : [10,20,30]},"Error in splitEvenOddList()");
-console.log("splitEvenOddList works fine\n");
+//________________________testing splitEvenOdd()____________________________
+checkAssert(lib.splitEvenOdd.name,[],lib.splitEvenOdd([]),{odd : [],even : []},"Error in splitEvenOdd()");
+checkAssert(lib.splitEvenOdd.name,[2,3,4],lib.splitEvenOdd([2,3,4]),{odd:[3], even:[2,4]},"Error in splitEvenOdd()");
+checkAssert(lib.splitEvenOdd.name,[0,1,0],lib.splitEvenOdd([0,1,0]),{odd : [1],even : [0,0]},"Error in splitEvenOdd()");
+checkAssert(lib.splitEvenOdd.name,[9,1,3],lib.splitEvenOdd([9,1,3]),{odd : [9,1,3],even : []},"Error in splitEvenOdd()");
+checkAssert(lib.splitEvenOdd.name,[12,13,21],lib.splitEvenOdd([12,13,21]),{odd : [13,21],even : [12]},"Error in splitEvenOdd()");
+checkAssert(lib.splitEvenOdd.name,[10,20,30],lib.splitEvenOdd([10,20,30]),{odd : [],even : [10,20,30]},"Error in splitEvenOdd()");
+console.log("splitEvenOdd works fine\n");
 
 //________________________testing splitList()____________________________
 checkAssert(lib.splitList.name,[],lib.splitList([],"odd"),[],"Error in splitList()");
@@ -48,34 +48,32 @@ checkAssert(lib.splitList.name,[12,13,21],lib.splitList([12,13,21],"even"),[12],
 checkAssert(lib.splitList.name,[10,20,30],lib.splitList([10,20,30],"even"),[10,20,30],"Error in splitList()");
 console.log("splitList works fine\n");
 
-//________________________testing returnGreatest()____________________________
-checkAssert(lib.returnGreatest.name,[1,1],lib.returnGreatest(1,1),1,"Error in returnGreatest()");
-checkAssert(lib.returnGreatest.name,[2,3],lib.returnGreatest(2,3),3,"Error in returnGreatest()");
-checkAssert(lib.returnGreatest.name,[1,0],lib.returnGreatest(1,0),1,"Error in returnGreatest()");
-console.log("returnGreatest works fine\n");
+//________________________testing findGreatest()____________________________
+checkAssert(lib.findGreatest.name,[1,1],lib.findGreatest(1,1),1,"Error in findGreatest()");
+checkAssert(lib.findGreatest.name,[2,3],lib.findGreatest(2,3),3,"Error in findGreatest()");
+checkAssert(lib.findGreatest.name,[1,0],lib.findGreatest(1,0),1,"Error in findGreatest()");
+console.log("findGreatest works fine\n");
 
-//________________________testing returnSmallest()____________________________
-checkAssert(lib.returnSmallest.name,[1,1],lib.returnSmallest(1,1),1,"Error in returnSmallest()");
-checkAssert(lib.returnSmallest.name,[2,3],lib.returnSmallest(2,3),2,"Error in returnSmallest()");
-checkAssert(lib.returnSmallest.name,[1,0],lib.returnSmallest(1,0),0,"Error in returnSmallest()");
-console.log("returnSmallest works fine\n");
+//________________________testing findSmallest()____________________________
+checkAssert(lib.findSmallest.name,[1,1],lib.findSmallest(1,1),1,"Error in findSmallest()");
+checkAssert(lib.findSmallest.name,[2,3],lib.findSmallest(2,3),2,"Error in findSmallest()");
+checkAssert(lib.findSmallest.name,[1,0],lib.findSmallest(1,0),0,"Error in findSmallest()");
+console.log("findSmallest works fine\n");
 
 //________________________testing findMin()____________________________
-checkAssert(lib.findMin.name,[ ],lib.findMin([ ]),0,"Error in findMin()");
 checkAssert(lib.findMin.name,[2,3,4,4],lib.findMin([2,3,4,4]),2,"Error in findMin()");
 checkAssert(lib.findMin.name,[0,1,0],lib.findMin([0,1,0]),0,"Error in findMin()");
 checkAssert(lib.findMin.name,[10,20,30],lib.findMin([10,20,30]),10,"Error in findMin()");
 console.log("findMin works fine\n");
 
 //________________________testing findMax()____________________________
-checkAssert(lib.findMax.name,[ ],lib.findMax([ ]),0,"Error in findMax()");
 checkAssert(lib.findMax.name,[2,3,4,4],lib.findMax([2,3,4,4]),4,"Error in findMax()");
 checkAssert(lib.findMax.name,[0,1,0],lib.findMax([0,1,0]),1,"Error in findMax()");
 checkAssert(lib.findMax.name,[10,20,30],lib.findMax([10,20,30]),30,"Error in findMax()");
 console.log("findMax works fine\n");
 
 //________________________testing reverse()____________________________
-checkAssert(lib.reverse.name,[ ],lib.reverse([ ]),[],"Error in reverse()");
+checkAssert(lib.reverse.name,[ ],lib.reverse([]),[],"Error in reverse()");
 checkAssert(lib.reverse.name,[2,3,4,4],lib.reverse([2,3,4,4]),[4,4,3,2],"Error in reverse()");
 checkAssert(lib.reverse.name,[0,1,0],lib.reverse([0,1,0]),[0,1,0],"Error in reverse()");
 checkAssert(lib.reverse.name,[10,20,30],lib.reverse([10,20,30]),[30,20,10],"Error in reverse()");
@@ -138,12 +136,12 @@ checkAssert(lib.extractSecondElements.name,[0,1,0],lib.extractSecondElements([0,
 checkAssert(lib.extractSecondElements.name,[10,20,30],lib.extractSecondElements([10,20,30]),[20],"Error in extractSecondElements()");
 console.log("extractSecondElements works fine\n");
 
-//________________________testing mapLengths()____________________________
-checkAssert(lib.mapLengths.name,[ ],lib.mapLengths([ ]),[],"Error in mapLengths()");
-checkAssert(lib.mapLengths.name,["swagata","chakraborty"],lib.mapLengths(["swagata","chakraborty"]),[7,11],"Error in mapLengths()");
-checkAssert(lib.mapLengths.name,["","2","abc"],lib.mapLengths(["","2","abc"]),[0,1,3],"Error in mapLengths()");
-checkAssert(lib.mapLengths.name,["abcde","jj","lolopll"],lib.mapLengths(["abcde","jj","lolopll"]),[5,2,7],"Error in mapLengths()");
-console.log("mapLengths works fine\n");
+//________________________testing mapLength()____________________________
+checkAssert(lib.mapLength.name,[ ],lib.mapLength([]),[],"Error in mapLength()");
+checkAssert(lib.mapLength.name,["swagata","chakraborty"],lib.mapLength(["swagata","chakraborty"]),[7,11],"Error in mapLength()");
+checkAssert(lib.mapLength.name,["","2","abc"],lib.mapLength(["","2","abc"]),[0,1,3],"Error in mapLength()");
+checkAssert(lib.mapLength.name,["abcde","jj","lolopll"],lib.mapLength(["abcde","jj","lolopll"]),[5,2,7],"Error in mapLength()");
+console.log("mapLength works fine\n");
 
 //________________________testing partition()____________________________
 checkAssert(lib.partition.name,[[],2],lib.partition([],2),[[],[]],"Error in partition");

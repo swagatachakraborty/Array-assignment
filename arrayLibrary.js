@@ -3,8 +3,8 @@ const isEven = function(value) {
 }
 exports.isEven = isEven;
 
-const add = function(num1,num2) {
-  return num1+num2;
+const add = function(first,second) {
+  return first+second;
 }
 
 const addElements = function(list) {
@@ -14,58 +14,50 @@ exports.addElements = addElements;
  
 const average = function(list) {
   let sum = addElements(list);
-  let avg = 0;
   if(list.length) {
     return sum/list.length;
   }
-  return avg;
+  return 0;
 }
 exports.average = average;
 
-const categorizeElement = function(splitObject,element){
+const categorizeNumber = function(splittedNumbers,element){
   if(isEven(element)) { 
-    splitObject["even"].push(element); 
-    return splitObject; 
+    splittedNumbers["even"].push(element); 
+    return splittedNumbers; 
   }
-  splitObject["odd"].push(element);
-  return splitObject;
+  splittedNumbers["odd"].push(element);
+  return splittedNumbers;
 }
 
-const splitEvenOddList  = function(list) {
-  return list.reduce(categorizeElement, {even:[],odd:[]});
+const splitEvenOdd  = function(list) {
+  return list.reduce(categorizeNumber, {even:[],odd:[]});
 }
-exports.splitEvenOddList = splitEvenOddList;
+exports.splitEvenOdd = splitEvenOdd;
 
 const splitList = function(list,requireListType) {
-  let splitList = splitEvenOddList(list);
+  let splitList = splitEvenOdd(list);
   return splitList[requireListType];
 }
 exports.splitList = splitList;
 
-const returnGreatest = function(value1,value2) {
-  if(value1>value2) {
-    return value1;
-  }
-  return value2;
+const findGreatest = function(value1,value2) {
+  return Math.max(value1,value2);
 }
-exports.returnGreatest = returnGreatest;
+exports.findGreatest = findGreatest;
 
-const returnSmallest = function(value1,value2) {
-  if(value1<value2) {
-    return value1;
-  }
-  return value2;
+const findSmallest = function(value1,value2) {
+  return Math.min(value1,value2);
 }
-exports.returnSmallest = returnSmallest;
+exports.findSmallest = findSmallest;
 
 const findMax = function(list) {
-  return list.reduce(returnGreatest,0);
+  return list.reduce(findGreatest,list[0]);
 }
 exports.findMax = findMax;
 
 const findMin = function(list) {
-  let min = findMax(list);
-  return list.reduce(returnSmallest,min);
+  return list.reduce(findSmallest,list[0]);
 }
 exports.findMin = findMin;
 
@@ -102,14 +94,14 @@ exports.findNthElement = findNthElement;
 const fibonacci = function(range) {
   let prevTerm = 0;
   let presentTerm = 1;
-  let fibo = [];
+  let series = [];
   for(let count = 0; count < range; count++) {
-    fibo.push(prevTerm);
+    series.push(prevTerm);
     let nextTerm = presentTerm + prevTerm ;
     prevTerm = presentTerm;
     presentTerm = nextTerm;
   }
-  return fibo;
+  return series;
 }
 exports.fibonacci = fibonacci;
 
@@ -158,22 +150,21 @@ const extractSecondElements = function(list) {
 }
 exports.extractSecondElements = extractSecondElements;
 
-const insertStringLength = function(mapedList,string){
-  mapedList.push(string.length);
-  return mapedList;
+const findLength = function(element){
+  if(!element) return 0;
+  return element.length;
 }
 
-const mapLengths = function(list) {
-  return list.reduce(insertStringLength,[]);
+const mapLength = function(list) {
+  return list.map(findLength);
 }
-exports.mapLengths = mapLengths;
+exports.mapLength = mapLength;
 
 const zipWith  = function(list) {
   let index = 0;
   return function(zippedList,element) {
     let zip = [];
-    zip.push(element);
-    zip.push(list[index]);
+    zip.push(element,list[index]);
     index++;
     if(!zip.includes(undefined)){
       zippedList.push(zip);
@@ -207,8 +198,8 @@ const makeUnique = function(list) {
 exports.makeUnique = makeUnique;
 
 const union = function(list1,list2) {
-  let margeArray = merge(list1,list2);
-  return makeUnique(margeArray);
+  let mergeList = merge(list1,list2);
+  return makeUnique(mergeList);
 }
 exports.union = union;
 
