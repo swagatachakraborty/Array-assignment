@@ -231,6 +231,9 @@ const difference = function(list1,list2) {
 exports.difference = difference;
 
 const isSubset = function(list1,list2) {
+  if(list2.length>list1.length){
+    return false;
+  }
   let checkIsPresent = isPresentIn(list1);
   return list2.every(checkIsPresent);
 }
