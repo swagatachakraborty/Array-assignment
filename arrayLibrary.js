@@ -81,16 +81,6 @@ const findIndex = function(list, searchElement) {
 }
 exports.findIndex = findIndex;
 
-const findNthElement = function(list, requiredIndex) {
-  for(index in list) {
-    if(index == requiredIndex) {
-      return list[index];
-    }
-  }
-  return -1;
-}
-exports.findNthElement = findNthElement;
-
 const fibonacci = function(range) {
   let prevTerm = 0;
   let presentTerm = 1;

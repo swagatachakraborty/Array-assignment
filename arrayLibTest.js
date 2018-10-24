@@ -93,13 +93,6 @@ checkAssert(lib.findIndex.name,[[0,1,0],0],lib.findIndex([0,1,0],0),0,"Error in 
 checkAssert(lib.findIndex.name,[[10,20,30],12],lib.findIndex([10,20,30],12),-1,"Error in findIndex()");
 console.log("findIndex works fine\n");
 
-//________________________testing findNthElement()____________________________
-checkAssert(lib.findNthElement.name,[[ ],0],lib.findNthElement([ ],0),-1,"Error in findNthElement()");
-checkAssert(lib.findNthElement.name,[[2,3,4,4],3],lib.findNthElement([2,3,4,4],3),4,"Error in findNthElement()");
-checkAssert(lib.findNthElement.name,[[0,1,0],0],lib.findNthElement([0,1,0],0),0,"Error in findNthElement()");
-checkAssert(lib.findNthElement.name,[[10,20,30],12],lib.findNthElement([10,20,30],12),-1,"Error in findNthElement()");
-console.log("findNthElement works fine\n");
-
 //________________________testing fibonacci()____________________________
 checkAssert(lib.fibonacci.name,[9],lib.fibonacci(9),[0,1,1,2,3,5,8,13,21],"Error in fibonacci()");
 checkAssert(lib.fibonacci.name,[1],lib.fibonacci(1),[0],"Error in fibonacci()");
