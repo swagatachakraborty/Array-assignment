@@ -179,23 +179,24 @@ const zip = function(list1, list2) {
 }
 exports.zip = zip;
 
-const insertIfNotPresent = function(list,element) {
-  if(!list.includes(element)){
-    list.push(element);
-  }
-  return list;
-}
-
 const makeUnique = function(list) {
-  let uniqList = [];
-  for(let element of list) {
-    if(findIndex(uniqList, element) == -1) {
-      uniqList.push(element);
-    }
-  }
-  return uniqList;
+  let insertIfAbsent = isAbsentInSubset(list);
+  return list.filter(insertIfAbsent);
 }
 exports.makeUnique = makeUnique;
+
+const isAbsentInSubset = function(list) {
+  let index = 1;
+  return function (element){
+    let result = isPresent(list.slice(index),element);
+    index++;
+    return !result;
+  }
+}
+
+const isPresent = function(list,element) {
+  return list.includes(element);
+}
 
 const union = function(list1,list2) {
   let mergeList = merge(list1,list2);
@@ -203,43 +204,35 @@ const union = function(list1,list2) {
 }
 exports.union = union;
 
-const operationOnLists = function(list1,list2) {
-  let commonElements = [];
-  let difference = [];
-  for(element of list1) {
-    let index = findIndex(list2,element);
-    if(index != -1) {
-      commonElements.push(element);
-    }
-    if(index == -1) {
-      difference.push(element);
-    }
+const isPresentIn = function(list) {
+  return function (element){
+    return isPresent(list,element);
   }
-  let operationOnLists = {
-  "intersection" : makeUnique(commonElements),
-  "difference" : makeUnique(difference)
-  };
-  return operationOnLists;
 }
-exports.operationOnLists = operationOnLists;
+
+const isAbsentIn = function(list) {
+  return function (element){
+    return !isPresent(list,element);
+  }
+}
 
 const intersection = function(list1,list2) {
-  return operationOnLists(list1,list2)["intersection"];
+  let insertIfPresent = isPresentIn(list1);
+  let commonElements = list2.filter(insertIfPresent);
+  return makeUnique(commonElements);
 }
 exports.intersection = intersection;
 
 const difference = function(list1,list2) {
-  return operationOnLists(list1,list2)["difference"];
+  let insertIfAbsent = isAbsentIn(list2);
+  let result = list1.filter(insertIfAbsent);
+  return makeUnique(result);
 }
 exports.difference = difference;
 
 const isSubset = function(list1,list2) {
-  for(element of list2) { 
-    if(findIndex(list1,element) == -1) {
-      return false;
-    }
-  }
-  return true;
+  let checkIsPresent = isPresentIn(list1);
+  return list2.every(checkIsPresent);
 }
 exports.isSubset = isSubset;
 
