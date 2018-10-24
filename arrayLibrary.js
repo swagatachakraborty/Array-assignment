@@ -237,13 +237,9 @@ const isSubset = function(list1,list2) {
 exports.isSubset = isSubset;
 
 const rotate = function(list,shift) {
-  let len = list.length;
-  let rotateList = [];
-  for (let index in list) {
-    let rotateIndex = (+index + +shift) % len;
-    rotateList[ rotateIndex ] = list[ index ];
-  }
-  return rotateList;
+  shift = shift - list.length;
+  let shiftedList = list.slice(-shift).concat(list.slice(0,-shift));
+  return shiftedList;
 }
 exports.rotate = rotate;
 
