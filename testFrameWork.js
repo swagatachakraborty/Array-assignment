@@ -1,8 +1,21 @@
 const assert = require("assert");
 
-const checkAssert = function(func, inputs, actualOutput, expectedOutput, errorMessage) {
+const checkAssert = function(func, inputs, actualOutput, expectedOutput) {
   generateTestReports(func, inputs, actualOutput, expectedOutput);
+  let errorMessage = "Error in "+func+"()";
   assert.deepEqual(expectedOutput,actualOutput,errorMessage);
+}
+
+const generateTestReports = function(func, inputs, actualOutput, expectedOutput) {
+  let serial = count();
+  if( serial == 1) {
+    createHeader();
+  }
+  let functionTest = leftJustifier(""+JSON.stringify(func),30);
+  let givenInputs = leftJustifier(""+JSON.stringify(inputs),30);
+  let output = leftJustifier(""+JSON.stringify(actualOutput),50);
+  expectedOutput = JSON.stringify(expectedOutput);
+  console.log("",serial,"|",functionTest,"|",givenInputs,"|",output,"|",expectedOutput);
 }
 
 const repeat = function(char) {
@@ -34,17 +47,6 @@ const createHeader = function() {
   createBorder();
   console.log(functionHeader);
   createBorder();
-}
-
-const generateTestReports = function(func, inputs, actualOutput, expectedOutput) {
-  let serial = count();
-  if( serial == 1) { 
-    createHeader();
-  }
-  let functionTest = leftJustifier(JSON.stringify(func),30);
-  let givenInputs = leftJustifier(JSON.stringify(inputs),30);
-  let output = leftJustifier(JSON.stringify(actualOutput),50);
-  console.log("",serial,"|",functionTest,"|",givenInputs,"|",output,"|",expectedOutput);
 }
 
 const leftJustifier = function(text,width) {
